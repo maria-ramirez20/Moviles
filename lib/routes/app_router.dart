@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-//import 'package:flutter_application_1/lib/views/ciclo_vida/ciclo_vida.dart';
+import 'package:flutter_application_1/views/ciclo_vida/ciclo_vida.dart';
 import 'package:flutter_application_1/views/home/home.dart';
 import 'package:flutter_application_1/views/paso_parametros/detalle_parametros.dart';
 import 'package:flutter_application_1/views/paso_parametros/paso_parametros.dart';
@@ -46,13 +46,13 @@ final GoRouter appRouter = GoRouter(
       },
     ),
 
-    /* 
+    
     //!Ruta para el ciclo de vida
     GoRoute(
       path: '/ciclo_vida',
       builder: (context, state) => const CicloVidaScreen(),
     ),
-*/
+
     
   ],
 );

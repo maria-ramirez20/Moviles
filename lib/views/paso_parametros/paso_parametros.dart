@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/base_view.dart';
 import 'package:go_router/go_router.dart';
 
 /// !PasoParametrosScreen - Pantalla de Paso de Parámetros
@@ -52,9 +53,8 @@ class PasoParametrosScreenState extends State<PasoParametros> {
   @override
   // *build es un metodo que retorna un widget
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Paso de Parámetros')),
-      body: Padding(
+    return BaseView(
+      title: 'Paso de Parámetros',      body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
