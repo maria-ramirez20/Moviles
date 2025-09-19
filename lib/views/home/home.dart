@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../widgets/drawer.dart';
+import '../../widgets/custom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Dashboard Principal')),
-      drawer: const Drawer(),   // REVISARRRRRRRRRRRRRRRRRRRRRRRR AQUI
+      drawer: const CustomDrawer(),   // REVISARRRRRRRRRRRRRRRRRRRRRRRR AQUI
       body: const Padding(
         padding: EdgeInsets.all(16.0),
         child: Center(
