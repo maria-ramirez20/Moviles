@@ -57,6 +57,15 @@ class CustomDrawer extends StatelessWidget {
 
           ListTile(
             leading: const Icon(Icons.book),
+            title: const Text('Taller 2'),
+            onTap: () {
+              context.go('/widgets_2');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.book),
             title: const Text('Taller 1'),
             onTap: () {
               context.go('/main_1');

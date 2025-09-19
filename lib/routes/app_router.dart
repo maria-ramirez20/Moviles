@@ -4,6 +4,7 @@ import 'package:flutter_application_1/views/home/home.dart';
 import 'package:flutter_application_1/views/paso_parametros/detalle_parametros.dart';
 import 'package:flutter_application_1/views/paso_parametros/paso_parametros.dart';
 import 'package:flutter_application_1/main_1.dart';
+import 'package:flutter_application_1/views/widgets_2/widgets_2.dart';
 
 final GoRouter appRouter = GoRouter(
 
@@ -26,6 +27,13 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/main_1',
       builder: (context, state) => const HomePage(),
+
+      
+    ),
+
+    GoRoute(
+      path: '/widgets_2',
+      builder: (context, state) => const HomePage2(),
 
       
     ),
