@@ -4,6 +4,7 @@ import 'package:flutter_application_1/views/home/home.dart';
 import 'package:flutter_application_1/views/paso_parametros/detalle_parametros.dart';
 import 'package:flutter_application_1/views/paso_parametros/paso_parametros.dart';
 import 'package:flutter_application_1/views/future/future_view.dart';
+import 'package:flutter_application_1/views/isolate/isolate_view.dart';
 import 'package:flutter_application_1/main_1.dart';
 import 'package:flutter_application_1/views/widgets_2/widgets_2.dart';
 
@@ -16,9 +17,15 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const HomeScreen(), // Usa HomeView
     ),
 
+    GoRoute(
+      path: '/isolate',
+      builder: (context, state) => const IsolateView(),
+    ),
+
+
     // Ruta para Future View
     GoRoute(
-      path: '/future.view',
+      path: '/future',
       builder: (context, state) => const FutureView(),
     ),
 
