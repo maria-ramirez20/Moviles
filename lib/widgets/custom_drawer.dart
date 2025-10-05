@@ -38,6 +38,15 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           
+          ListTile(
+            leading: const Icon(Icons.book),
+            title: const Text('Future'),
+            onTap: () {
+              context.go('/future.view');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+          
           //!PASO DE PARAMETROS
           ListTile(
             leading: const Icon(Icons.input),
@@ -72,6 +81,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pop(context); // Cierra el drawer
             },
           ),
+
         ],
       ),
     );

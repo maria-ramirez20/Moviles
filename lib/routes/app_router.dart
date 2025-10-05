@@ -3,6 +3,7 @@ import 'package:flutter_application_1/views/ciclo_vida/ciclo_vida.dart';
 import 'package:flutter_application_1/views/home/home.dart';
 import 'package:flutter_application_1/views/paso_parametros/detalle_parametros.dart';
 import 'package:flutter_application_1/views/paso_parametros/paso_parametros.dart';
+import 'package:flutter_application_1/views/future/future_view.dart';
 import 'package:flutter_application_1/main_1.dart';
 import 'package:flutter_application_1/views/widgets_2/widgets_2.dart';
 
@@ -15,6 +16,11 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const HomeScreen(), // Usa HomeView
     ),
 
+    // Ruta para Future View
+    GoRoute(
+      path: '/future.view',
+      builder: (context, state) => const FutureView(),
+    ),
 
     // Rutas para el paso de parámetros
     GoRoute(
