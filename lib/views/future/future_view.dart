@@ -24,7 +24,7 @@ class _FutureViewState extends State<FutureView> {
   //*espera 5 segundos antes de cargar los datos, esto simula una carga de datos.
   Future<List<String>> cargarNombres() async {
     //future.delayed() simula una carga de datos
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
     return [
       'Juan',
       'Mario',

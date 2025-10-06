@@ -5,6 +5,7 @@ import 'package:flutter_application_1/views/paso_parametros/detalle_parametros.d
 import 'package:flutter_application_1/views/paso_parametros/paso_parametros.dart';
 import 'package:flutter_application_1/views/future/future_view.dart';
 import 'package:flutter_application_1/views/isolate/isolate_view.dart';
+import 'package:flutter_application_1/views/timer/timer_view.dart';
 import 'package:flutter_application_1/main_1.dart';
 import 'package:flutter_application_1/views/widgets_2/widgets_2.dart';
 
@@ -17,6 +18,13 @@ final GoRouter appRouter = GoRouter(
       builder: (context, state) => const HomeScreen(), // Usa HomeView
     ),
 
+
+    GoRoute(
+          path: '/timer',
+          builder: (context, state) => const TimerView(),
+    ),
+
+
     GoRoute(
       path: '/isolate',
       builder: (context, state) => const IsolateView(),
@@ -28,6 +36,7 @@ final GoRouter appRouter = GoRouter(
       path: '/future',
       builder: (context, state) => const FutureView(),
     ),
+
 
     // Rutas para el paso de parámetros
     GoRoute(

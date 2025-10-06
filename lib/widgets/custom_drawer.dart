@@ -39,7 +39,26 @@ class CustomDrawer extends StatelessWidget {
           ),
           
           ListTile(
-            leading: const Icon(Icons.bookmarks_outlined),
+            leading: const Icon(Icons.book),
+            title: const Text('Future'),
+            onTap: () {
+              context.go('/future.view');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+          
+          ListTile(
+            leading: const Icon(Icons.timer),
+            title: const Text('Cronómetro'),
+            onTap: () {
+              context.go('/timer');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+
+
+          ListTile(
+            leading: const Icon(Icons.bookmarks),
             title: const Text('Isolate'),
             onTap: () {
               context.go('/isolate');
