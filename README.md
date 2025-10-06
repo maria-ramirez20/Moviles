@@ -1,11 +1,10 @@
-# 🌱 Taller 1 - Introductorio Flutter / Widgets
+# 📱Talleres Segundo Corte - Moviles
+
+El Proyecto encontraras prácticas para aprender los conceptos fundamentales de Flutter y el manejo basico de widgets.
 
 ## 👩‍💻😺 Datos del estudiante
 ### **Nombre:** Maria Jose Ramirez Cardona
 ### **Código:** 230212022
-
-
-El Proyecto se realizó como práctica para aprender los conceptos fundamentales de Flutter y el manejo basico de widgets.
 
 ---
 
@@ -42,8 +41,34 @@ Este taller muestra una pantalla principal con:
 ### Pantalla Inicial
 ![Captura de ejemplo](docs/images/pantalla_Inicial.jpg)
 
-### Cambio de Titulo
+### Cambio de Título
 ![Captura de ejemplo](docs/images/evidencia_cambio_titulo.jpg)
 
 ### Pantalla Final
 ![Captura de ejemplo](docs/images/pantalla_Final.jpg)
+
+
+# ❓Cuándo usar:
+
+## - Future
+Representa operaciones que se completan en el futuro. Perfecto para modelar tareas como llamadas a API o consultas a base de datos.
+## - async/await
+Una forma más legible de trabajar con código asincrónico, usando un estilo secuencial sin bloquear la UI.
+
+## - Isolate 
+Hilos de ejecución paralelos con memoria independiente, ideales para tareas pesadas que de otro modo congelarían la aplicación.
+
+Incluir diagrama/lista de pantallas y flujos (cronómetro y proceso pesado).
+
+# 🪟 Lista de Vistas
+- 🏠Home
+- 📘Taller 1
+- 📗Taller 2
+- 🔄️Ciclo de Vida
+- ⚙️Paso Parametros
+- 📂Future
+- 🧵Isolate
+- ⏱️Cronometro
+
+### Diagrama Vistas
+![Captura de ejemplo](docs/images/diagrama_vistas.png)
