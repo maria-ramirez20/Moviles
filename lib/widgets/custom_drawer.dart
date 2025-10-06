@@ -38,6 +38,36 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           
+          
+          
+          ListTile(
+            leading: const Icon(Icons.timer),
+            title: const Text('Cronómetro'),
+            onTap: () {
+              context.go('/timer');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+
+
+          ListTile(
+            leading: const Icon(Icons.bookmarks),
+            title: const Text('Isolate'),
+            onTap: () {
+              context.go('/isolate');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+          
+          ListTile(
+            leading: const Icon(Icons.category_rounded),
+            title: const Text('Future'),
+            onTap: () {
+              context.go('/future');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
+          
           //!PASO DE PARAMETROS
           ListTile(
             leading: const Icon(Icons.input),
@@ -72,6 +102,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pop(context); // Cierra el drawer
             },
           ),
+
         ],
       ),
     );
