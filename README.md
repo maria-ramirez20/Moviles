@@ -1,4 +1,4 @@
-# 📱Talleres Segundo Corte - Moviles
+# 📱Talleres Segundo Corte - Moviles.
 
 El Proyecto encontraras prácticas para aprender los conceptos fundamentales de Flutter y el manejo basico de widgets.
 
