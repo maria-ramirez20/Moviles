@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/routes/app_router.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'themes/app_theme.dart'; // Importar el tema
-import 'package:go_router/go_router.dart';
 
 
-void main() {
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  // Optimizar la carga del .env
+  try {
+    await dotenv.load(fileName: ".env");
+  } catch (e) {
+    debugPrint('Error loading .env file: $e');
+  }
+  
   runApp(const MyApp());
 }
 
