@@ -1,3 +1,4 @@
+import 'package:flutter_application_1/views/autenticacion/login.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application_1/views/ciclo_vida/ciclo_vida.dart';
 import 'package:flutter_application_1/views/home/home.dart';
@@ -17,6 +18,9 @@ final GoRouter appRouter = GoRouter(
       path: '/',
       builder: (context, state) => const HomeScreen(), // Usa HomeView
     ),
+
+    GoRoute(path: '/login', builder: (context, state) => const Login()),
+
 
 
     GoRoute(
