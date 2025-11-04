@@ -25,6 +25,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
+
           ListTile(
             leading: const Icon(Icons.home),
             title: const Text('Inicio'),
@@ -38,7 +39,14 @@ class CustomDrawer extends StatelessWidget {
             },
           ),
           
-          
+          ListTile(
+            leading: const Icon(Icons.timer),
+            title: const Text('Universidades'),
+            onTap: () {
+              context.go('/ListUniversidad');
+              Navigator.pop(context); // Cierra el drawer
+            },
+          ),
           
           ListTile(
             leading: const Icon(Icons.timer),

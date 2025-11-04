@@ -1,4 +1,5 @@
 import 'package:flutter_application_1/views/autenticacion/login.dart';
+import 'package:flutter_application_1/views/universidad/universidad_fb_list_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application_1/views/ciclo_vida/ciclo_vida.dart';
 import 'package:flutter_application_1/views/home/home.dart';
@@ -22,7 +23,12 @@ final GoRouter appRouter = GoRouter(
     GoRoute(path: '/login', builder: (context, state) => const Login()),
 
 
-
+    GoRoute(
+            path: '/ListUniversidad',
+            builder: (context, state) => const UniversidadFbListView(),
+    ),
+    
+    
     GoRoute(
           path: '/timer',
           builder: (context, state) => const TimerView(),
