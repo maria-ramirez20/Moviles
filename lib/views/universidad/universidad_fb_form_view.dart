@@ -16,7 +16,11 @@ class UniversidadFbFormView extends StatefulWidget {
 class _UniversidadFbFormViewState extends State<UniversidadFbFormView> {
   final _formKey = GlobalKey<FormState>();
   final _nombreController = TextEditingController();
-  final _descripcionController = TextEditingController();
+  final _direccionController = TextEditingController();
+  final _telefonoController = TextEditingController();
+  final _paginaWebController = TextEditingController();
+  final _nitController = TextEditingController();
+
   bool _camposInicializados = false;
 
   Future<void> _guardar({String? id}) async {
@@ -24,11 +28,11 @@ class _UniversidadFbFormViewState extends State<UniversidadFbFormView> {
       try {
         final universidad = UniversidadesFb(
           id: id ?? '',
-          nit: '', // Dejar vacío o pedir en el formulario
+          nit: _nitController.text.trim(),
           nombre: _nombreController.text.trim(),
-          direccion: _descripcionController.text.trim(), 
-          telefono: '', 
-          pagina_web: '',
+          direccion: _direccionController.text.trim(),
+          telefono: _telefonoController.text.trim(),  
+          pagina_web: _paginaWebController.text.trim(), 
         );
 
         if (widget.id == null) {
@@ -69,15 +73,21 @@ class _UniversidadFbFormViewState extends State<UniversidadFbFormView> {
 
   void _inicializarCampos(UniversidadesFb categoria) {
     if (_camposInicializados) return;
+    _nitController.text = categoria.nit;
     _nombreController.text = categoria.nombre;
-    _descripcionController.text = categoria.direccion;
+    _direccionController.text = categoria.direccion;
+    _telefonoController.text = categoria.telefono;
+    _paginaWebController.text = categoria.pagina_web;
     _camposInicializados = true;
   }
 
   @override
   void dispose() {
+    _nitController.dispose();
     _nombreController.dispose();
-    _descripcionController.dispose();
+    _direccionController.dispose();
+    _telefonoController.dispose();
+    _paginaWebController.dispose();
     super.dispose();
   }
 
@@ -224,12 +234,35 @@ class _UniversidadFbFormViewState extends State<UniversidadFbFormView> {
                             color: colorScheme.primary,
                           ),
                         ),
+
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: _nitController,
+                          decoration: InputDecoration(
+                            labelText: 'NIT',
+                            hintText: 'Ingresa el NIT de la universidad',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          textCapitalization: TextCapitalization.words,
+                          validator: (value) {
+                            if (value == null || value.trim().isEmpty) {
+                              return 'El NIT es requerido';
+                            }
+                            if (value.trim().length < 3) {
+                              return 'El NIT debe tener al menos 3 caracteres';
+                            }
+                            return null;
+                          },
+                        ),
+                        
                         const SizedBox(height: 16),
                         TextFormField(
                           controller: _nombreController,
                           decoration: InputDecoration(
                             labelText: 'Nombre',
-                            hintText: 'Ingresa el nombre de la categoría',
+                            hintText: 'Ingresa el nombre de la universidad',
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),
@@ -245,9 +278,10 @@ class _UniversidadFbFormViewState extends State<UniversidadFbFormView> {
                             return null;
                           },
                         ),
+
                         const SizedBox(height: 16),
                         TextFormField(
-                          controller: _descripcionController,
+                          controller: _direccionController,
                           decoration: InputDecoration(
                             labelText: 'Direccion',
                             hintText: 'Ingresa una direccion',
@@ -268,10 +302,48 @@ class _UniversidadFbFormViewState extends State<UniversidadFbFormView> {
                             return null;
                           },
                         ),
+
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: _telefonoController,
+                          decoration: InputDecoration(
+                            labelText: 'Telefono',
+                            hintText: 'Ingresa el telefono de la universidad',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          textCapitalization: TextCapitalization.words,
+                          validator: (value) {
+                            if (value == null || value.trim().isEmpty) {
+                              return 'El nombre es requerido';
+                            }
+                            if (value.trim().length < 3) {
+                              return 'El nombre debe tener al menos 3 caracteres';
+                            }
+                            return null;
+                          },
+                        ),
+                        
+                        const SizedBox(height: 16),
+                        TextFormField(
+                          controller: _paginaWebController,
+                          decoration: InputDecoration(
+                            labelText: 'Pagina Web',
+                            hintText: 'Ingresa la pagina web de la universidad',
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          textCapitalization: TextCapitalization.words,
+                          
+                        ),
+                        
                       ],
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 24),
                 // Botones de acción
                 Row(
