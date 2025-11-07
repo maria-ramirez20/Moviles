@@ -29,7 +29,7 @@ class UniversidadService {
 
   /// Actualiza una universidad existente
   static Future<void> updateUniversidad(UniversidadesFb universidad) async {
-    await _ref.doc(universidad.nit).update(universidad.toMap());
+    await _ref.doc(universidad.id).update(universidad.toMap());
   }
 
   /// Obtiene una universidad por su ID

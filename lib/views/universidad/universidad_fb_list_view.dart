@@ -183,7 +183,7 @@ class UniversidadFbListView extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => context.push('/categoriasfb/create'),
+        onPressed: () => context.push('/universidadesfb/create'),
         icon: const Icon(Icons.add),
         label: const Text('Nueva'),
       ),
@@ -219,7 +219,7 @@ class _CategoriaCard extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () => context.push('/categoriasfb/edit/${categoria.nit}'),
+        onTap: () => context.push('/universidadesfb/edit/${categoria.id}'),
         child: Padding(
           padding: EdgeInsets.all(isGridView ? 12 : 16),
           child: isGridView
@@ -251,7 +251,7 @@ class _CategoriaCard extends StatelessWidget {
               const SizedBox(height: 4),
               Text(
                 categoria.direccion.isEmpty
-                    ? 'Sin descripción'
+                    ? 'Sin direccion'
                     : categoria.direccion,
                 style: TextStyle(
                   fontSize: 13,
@@ -413,7 +413,7 @@ class _CategoriaCard extends StatelessWidget {
 
     if (confirmar == true && context.mounted) {
       try {
-        await UniversidadService.deleteUniversidad(categoria.nit);
+        await UniversidadService.deleteUniversidad(categoria.id);
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

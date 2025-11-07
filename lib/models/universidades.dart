@@ -1,11 +1,13 @@
 class UniversidadesFb {
-  final String nit;
+  final String id;          // ID del documento de Firestore
+  final String nit;         // NIT de la universidad
   final String nombre;
   final String direccion;
   final String telefono;
   final String pagina_web;
 
   UniversidadesFb({
+    required this.id,
     required this.nit,
     required this.nombre,
     required this.direccion,
@@ -13,9 +15,10 @@ class UniversidadesFb {
     required this.pagina_web,
   });
 
-  factory UniversidadesFb.fromMap(String nit, Map<String, dynamic> data) {
+  factory UniversidadesFb.fromMap(String docId, Map<String, dynamic> data) {
     return UniversidadesFb(
-      nit: nit,
+      id: docId,                        // ID del documento
+      nit: data['nit'] ?? '',          // NIT desde los datos
       nombre: data['nombre'] ?? '',
       direccion: data['direccion'] ?? '',
       telefono: data['telefono'] ?? '',
@@ -25,6 +28,7 @@ class UniversidadesFb {
 
   Map<String, dynamic> toMap() {
     return {
+      'nit': nit,
       'nombre': nombre,
       'direccion': direccion,
       'telefono': telefono,
