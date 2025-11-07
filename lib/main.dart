@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/routes/app_router.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'themes/app_theme.dart'; // Importar el tema
-import 'package:go_router/go_router.dart';
 
 
-void main() {
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  // Optimizar la carga del .env
+  try {
+    await dotenv.load(fileName: ".env");
+  } catch (e) {
+    debugPrint('Error loading .env file: $e');
+  }
+
+  // Inicializar Firebase antes de ejecutar la app
+  try {
+    await Firebase.initializeApp();
+  } catch (e) {
+    // Si estás usando FlutterFire CLI y firebase_options.dart, usa:
+    // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    debugPrint('Error inicializando Firebase: $e');
+  }
+
   runApp(const MyApp());
 }
 
