@@ -1,4 +1,6 @@
 import 'package:flutter_application_1/views/autenticacion/login.dart';
+import 'package:flutter_application_1/views/universidad/universidad_fb_form_view.dart';
+import 'package:flutter_application_1/views/universidad/universidad_fb_list_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application_1/views/ciclo_vida/ciclo_vida.dart';
 import 'package:flutter_application_1/views/home/home.dart';
@@ -22,7 +24,32 @@ final GoRouter appRouter = GoRouter(
     GoRoute(path: '/login', builder: (context, state) => const Login()),
 
 
+    /*GoRoute(
+            path: '/ListUniversidad',
+            builder: (context, state) => const UniversidadFbListView(),
+    ),*/
 
+    GoRoute(
+      path: '/ListUniversidad',
+      name: 'ListUniversidad',
+      builder: (_, __) => const UniversidadFbListView(),
+    ),
+
+    GoRoute(
+      path: '/universidadesfb/create',
+      name: 'universidadesfb.create',
+      builder: (context, state) => const UniversidadFbFormView(),
+    ),
+    GoRoute(
+      path: '/universidadesfb/edit/:id',
+      name: 'universidadesfb.edit',
+      builder: (context, state) {
+        final id = state.pathParameters['id']!;
+        return UniversidadFbFormView(id: id);
+      },
+    ),
+    
+    
     GoRoute(
           path: '/timer',
           builder: (context, state) => const TimerView(),

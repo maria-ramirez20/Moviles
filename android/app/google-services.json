@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "860323418347",
-    "project_id": "moviles-taller-4",
-    "storage_bucket": "moviles-taller-4.firebasestorage.app"
+    "project_number": "263657368069",
+    "project_id": "clasemoviles-fb6dc",
+    "storage_bucket": "clasemoviles-fb6dc.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:860323418347:android:391137d42e6f4daff6eeae",
+        "mobilesdk_app_id": "1:263657368069:android:2b7275ea4b47ad57590a6c",
         "android_client_info": {
           "package_name": "com.example.flutter_application_1"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBjpumXlEHpWHd8qLI4cS3JBtVxHgpcqTw"
+          "current_key": "AIzaSyDIsbLNZho8rsxCxkJuaY3fcKGBvnc8jmo"
         }
       ],
       "services": {
